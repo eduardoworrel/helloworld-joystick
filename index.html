@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div id="zone_joystick"></div>
+<body style="width: 1000px; height: 1000px;">
+    <div id="p" style="
+        position:absolute;width: 50px; height: 50px; background-color: cadetblue;"></div>
+    
+    <div id="space" style="width: 100%; height: 100vh; position: fixed;">
+
+        <div id="zone_joystick"></div>
+    </div>
 
     <script src="node_modules/nipplejs/dist/nipplejs.js"></script>
     <script type="module" src="main.js"></script>
