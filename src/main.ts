@@ -1,11 +1,13 @@
-let directions = []
-const m = nipplejs.create({
-    zone:document.querySelector("#zone_joystick"), 
+import {create} from 'nipplejs';
+let directions : string[]= []
+const m = create({
+    zone:document.querySelector("#zone_joystick") as HTMLElement, 
     mode:"static",
     color:"black",
     position:{left: '50%', bottom: '15%'}
 })
 m.on("move", (e, data)=>{
+    e
     directions = []
     if(data.angle.degree > 80 && data.angle.degree < 100){
         directions.push("ArrowUp")
@@ -42,10 +44,10 @@ m.on("move", (e, data)=>{
     }
 
 });
-m.on("end", (e, data)=>{
+m.on("end", ()=>{
     directions = []
 })
-const p = document.querySelector("#p");
+const p = document.querySelector("#p") as HTMLElement;
 let x = 0;
 let y = 0;
 setInterval(()=>{
