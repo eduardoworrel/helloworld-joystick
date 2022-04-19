@@ -49,8 +49,7 @@ const p = document.querySelector("#p");
 let x = 0;
 let y = 0;
 setInterval(()=>{
-    console.log(directions)
-   
+
     if(directions.includes("ArrowUp")){
         p.style.top = (x-= 10)  +"px"
     }
@@ -58,7 +57,7 @@ setInterval(()=>{
         p.style.top = (x+= 10) + "px"
     }
     if(directions.includes("ArrowLeft")){
-        //p.style.transform = "translateX(-10px)"
+        p.style.transform = "translateX(-10px)"
         p.style.left = (y-= 10) + "px"
     }
     if(directions.includes("ArrowRight")){
