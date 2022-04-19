@@ -24,8 +24,6 @@ m.on("move", (e, data)=>{
        
         directions.push("ArrowRight")
     }
-    
-    //diagonal
     if(data.angle.degree > 10 && data.angle.degree < 80){
         directions.push("ArrowUp")
         directions.push("ArrowRight")
