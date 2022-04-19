@@ -1,34 +1,28 @@
 import { create,JoystickManager } from "nipplejs";
+import {limit, speed} from "../config/positions";
 
-export class Move{
+export default class Move{
+    position: { horizontal:number, vertical:number};
     directions : string[]= []
-    constructor(principal: HTMLElement, zone: HTMLElement){
+    constructor(principal: HTMLElement, start:any, zone: HTMLElement){
+        this.position = start;
         const manager : JoystickManager = this.drawJoystick(zone);
         this.attatchEvents(manager);
         this.listenJoystick(principal);
     }
-    listenJoystick(p: HTMLElement){
-        setInterval(()=>{
-            if(this.directions.includes("ArrowUp")){
-                p.style.top = (x-= 10)  +"px"
-            }
-            if(this.directions.includes("ArrowDown")){
-                p.style.top = (x+= 10) + "px"
-            }
-            if(this.directions.includes("ArrowLeft")){
-                p.style.left = (y-= 10) + "px"
-            }
-            if(this.directions.includes("ArrowRight")){
-                p.style.left = (y+= 10 )+ "px"
-            }
-            p.scrollIntoView({block: "center", inline:"center", behavior: "auto"});
-          
-        },50)
+    drawJoystick(zone: HTMLElement){
+        return create({
+            zone:zone, 
+            mode:"static",
+            color:"white",
+            position:{left: '50%', bottom: '15%'}
+        })
     }
-
     attatchEvents(manager: JoystickManager){
         manager.on("move", (e, data)=>{
             e
+
+            this.directions = []
             if(data.angle.degree > 80 && data.angle.degree < 100){
                 this.directions.push("ArrowUp")
             }
@@ -65,12 +59,29 @@ export class Move{
             this.directions = []
         })
     }
-    drawJoystick(zone: HTMLElement){
-        return create({
-            zone:zone, 
-            mode:"static",
-            color:"black",
-            position:{left: '50%', bottom: '15%'}
-        })
+    listenJoystick(p: HTMLElement){
+        setInterval(()=>{
+            if(this.directions.includes("ArrowUp")){
+                if(this.position.vertical > limit.minX) this.position.vertical -= speed.distance;
+                p.style.top = this.position.vertical + speed.unit
+            }
+            if(this.directions.includes("ArrowDown")){
+                if(this.position.vertical < limit.maxX) this.position.vertical += speed.distance;
+                p.style.top = this.position.vertical + speed.unit
+            }
+            if(this.directions.includes("ArrowLeft")){
+                if(this.position.horizontal > limit.minY) this.position.horizontal -= speed.distance;
+                p.style.left = this.position.horizontal + speed.unit
+            }
+            if(this.directions.includes("ArrowRight")){
+                if(this.position.horizontal < limit.maxY) this.position.horizontal += speed.distance;
+                p.style.left = this.position.horizontal + speed.unit
+            }
+            p.scrollIntoView({block: "center", inline:"center", behavior: "auto"});
+          
+        },speed.ms)
     }
+
+   
+  
 }
