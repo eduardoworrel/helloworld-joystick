@@ -26,7 +26,7 @@
     "typescript": "^4"
   },
   "scripts": {
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "build": "rollup --config",
     "watch": "rollup --config --watch",
