@@ -20,9 +20,8 @@ export default class Move {
   drawJoystick(zone: HTMLElement) {
     return create({
       zone: zone as HTMLElement,
-      mode: 'static',
+      mode: 'dynamic',
       color: 'white',
-      position: { left: '50%', bottom: '15%' },
     });
   }
   attatchEvents(manager: JoystickManager) {
