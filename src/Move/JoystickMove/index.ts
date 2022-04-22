@@ -2,21 +2,31 @@ import { create, JoystickManager } from 'nipplejs';
 import { WatchMove } from '../config/WatchMove';
 
 export default class Move {
-  zone: HTMLElement;
   control: WatchMove;
-  constructor(control: WatchMove, zone: HTMLElement) {
+  constructor(control: WatchMove) {
     this.control = control;
-    this.zone = zone;
   }
 
   start() {
-    const manager: JoystickManager = this.drawJoystick(this.zone);
+    const manager: JoystickManager = this.drawJoystick();
     this.attatchEvents(manager);
   }
 
-  drawJoystick(zone: HTMLElement) {
+  drawJoystick() {
+    const area =  document.querySelector('#area') as HTMLElement;
+    if(!area)
+      throw new Error("O elemeno 'area' é obrigatório")
+
+    const joystickDiv = document.createElement("div");
+    joystickDiv.style.position = "fixed";
+    joystickDiv.style.width = "100vw";
+    joystickDiv.style.height = "100vh";
+    
+    area.prepend(joystickDiv);
+ 
+   
     return create({
-      zone: zone as HTMLElement,
+      zone: joystickDiv,
       mode: 'dynamic',
       color: 'white',
     });

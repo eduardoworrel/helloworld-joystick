@@ -17,7 +17,14 @@ export default class Move {
     keyboard.style.left = '3%';
 
     keyboard.innerHTML = `
-      <button class="kbc-button up">	  &#8593;</button>
+      <button class="kbc-button up" 
+        style='
+          display: block;
+          text-align: center;
+          margin: 0 auto !important;
+          '>	
+            &#8593;
+          </button>
       <button class="kbc-button left">  &#8592;</button>
       <button class="kbc-button down">  &#8595;</button>
       <button class="kbc-button right">	&#8594;</button>
