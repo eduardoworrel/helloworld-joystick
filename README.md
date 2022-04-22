@@ -11,3 +11,7 @@ npm run build
 
 open index.html file on browser
 ```
+
+## Este projeto é possível porque existem os seguintes repositórios
+- https://github.com/yoannmoinet/nipplejs
+- https://github.com/shhdharmen/keyboard-css
