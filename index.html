@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
-    <title>Document</title>
+    <title>Base</title>
     <style>
         *{
             user-select: none;
@@ -15,7 +15,8 @@
             -o-user-select: none;
         }
         #realcontent{
-
+            width: 3000px;
+             height: 3000px;
             background-image: url('https://lh3.googleusercontent.com/3WXb6deIT2jQbCfeSGZvAaVtMgSYjWgbNBjb24lSNyln97PnlpIkl1bAdsSCvPmOoNWwjyKorxsoYZy3IvvbK5uxSWkw-uC2EZ0zY1Je2sbWYnzyZu--9usJ17JpFuQWgd_5aIt9q4-AZhx5_A');
         }
         #area{
@@ -41,12 +42,7 @@
             left: 500px;
 
         }
-        #floated-keyboard{
-            position:fixed;
-            bottom: 3%;
-            left: 3%;
 
-        }
         .up{
             display: block;
            text-align: center;
@@ -62,27 +58,15 @@
 <body style="margin: 0;" >
     <div id="area">
         <div id="joystick"></div>
-        <div id="realcontent" style="
-          
-            width: 3000px; height: 3000px;">
+        <div id="realcontent" >
 
-<div id="p"></div>
-        <div  style="
-        position:absolute;width: 50px; height: 50px; background-color: cadetblue; top: 900px;left: 900px;"></div>
-</div>
+        <div id="p"></div>
+                <div  style="
+                position:absolute;width: 50px; height: 50px; background-color: cadetblue; top: 900px;left: 900px;"></div>
+        </div>
     
     </div>
-    <div id="floated-keyboard">
-        <button class="kbc-button up">	&#8593;</button>
-        <button class="kbc-button left">&#8592;</button>
-        <button class="kbc-button down">&#8595;</button>
-        <button class="kbc-button right">	&#8594;</button>
-       
-    </div>
-    <div id="space" style="width: 100%">
-       
-        <div id="zone_joystick"></div>
-    </div>
+
 
     <script src="dist/move.js"></script>
 </body>

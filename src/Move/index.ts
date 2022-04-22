@@ -8,8 +8,8 @@ export default class Move {
     const control = new WatchMove(position, principal);
     const joystick = new JoystickMove(control, zone);
     const keyboard = new KeyboardMove(control);
-
     joystick.start();
     keyboard.start();
+    control.togglePressedKeyboard();
   }
 }

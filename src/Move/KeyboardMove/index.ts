@@ -6,8 +6,25 @@ export default class Move {
   }
   start() {
     this.attatchEvents();
+    this.drawKeyboard()
   }
+  drawKeyboard() {
+    const keyboard = document.createElement('div') as HTMLElement;
+ 
+    keyboard.style.position = 'fixed';
+    keyboard.style.pointerEvents = 'none';
+    keyboard.style.bottom = '3%';
+    keyboard.style.left = '3%';
 
+    keyboard.innerHTML = `
+      <button class="kbc-button up">	  &#8593;</button>
+      <button class="kbc-button left">  &#8592;</button>
+      <button class="kbc-button down">  &#8595;</button>
+      <button class="kbc-button right">	&#8594;</button>
+    `
+    document.body.append(keyboard);
+ 
+  }
   attatchEvents() {
     window.addEventListener('keyup', (e) => this.disableMove(e.key));
     window.addEventListener('keydown', (e) => {

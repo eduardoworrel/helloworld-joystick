@@ -11,12 +11,7 @@ export class WatchMove {
 
   constructor(position: any, principal: HTMLElement) {
     this.position = position;
-    this.up = document.querySelector('.up') as HTMLElement;
-    this.down = document.querySelector('.down') as HTMLElement;
-    this.left = document.querySelector('.left') as HTMLElement;
-    this.right = document.querySelector('.right') as HTMLElement;
     this.move(principal);
-    this.togglePressedKeyboard();
   }
   move(p: HTMLElement) {
     setInterval(() => {
@@ -40,6 +35,11 @@ export class WatchMove {
     }, speed.ms);
   }
   togglePressedKeyboard() {
+    this.up = document.querySelector('.up') as HTMLElement;
+    this.down = document.querySelector('.down') as HTMLElement;
+    this.left = document.querySelector('.left') as HTMLElement;
+    this.right = document.querySelector('.right') as HTMLElement;
+    
     setInterval(() => {
       if (this.directions.includes('ArrowUp')) {
         this.up.classList.add('active');
