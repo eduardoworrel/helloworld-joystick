@@ -13,18 +13,16 @@ export default class Move {
   }
 
   drawJoystick() {
-    const area =  document.querySelector('#area') as HTMLElement;
-    if(!area)
-      throw new Error("O elemeno 'area' é obrigatório")
+    const area = document.querySelector('#area') as HTMLElement;
+    if (!area) throw new Error("O elemeno 'area' é obrigatório");
 
-    const joystickDiv = document.createElement("div");
-    joystickDiv.style.position = "fixed";
-    joystickDiv.style.width = "100vw";
-    joystickDiv.style.height = "100vh";
-    
+    const joystickDiv = document.createElement('div');
+    joystickDiv.style.position = 'fixed';
+    joystickDiv.style.width = '100vw';
+    joystickDiv.style.height = '100vh';
+
     area.prepend(joystickDiv);
- 
-   
+
     return create({
       zone: joystickDiv,
       mode: 'dynamic',

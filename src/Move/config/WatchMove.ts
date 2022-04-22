@@ -39,7 +39,7 @@ export class WatchMove {
     this.down = document.querySelector('.down') as HTMLElement;
     this.left = document.querySelector('.left') as HTMLElement;
     this.right = document.querySelector('.right') as HTMLElement;
-    
+
     setInterval(() => {
       if (this.directions.includes('ArrowUp')) {
         this.up.classList.add('active');
