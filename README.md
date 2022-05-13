@@ -11,7 +11,7 @@ Promova a navegação no seu site dando vida ao seu usuário, o permitindo se mo
 ## Exemplos:
  - https://eduardoworrel.github.io/universe-explorer/ui/universe-explorer/
  
-## get started
+## Getting started
 ```
 npm install
 
