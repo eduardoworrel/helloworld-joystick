@@ -9,7 +9,7 @@ Promova a navegação no seu site dando vida ao seu usuário, o permitindo se mo
 [&#9989; online](https://eduardoworrel.github.io/move-div-like-game/)
 
 ## Exemplos:
- - https://eduardoworrel.github.io/universe-explorer/ui/universe-explorer/
+ - https://eduardoworrel.github.io/universe-explorer
  
 ## Getting started
 ```
